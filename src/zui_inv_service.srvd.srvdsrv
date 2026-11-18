@@ -1,0 +1,6 @@
+@EndUserText.label: 'Invoice Processing Service'
+define service ZUI_INV_SERVICE {
+  expose ZC_INV_HEADER_RO as Invoice;
+  expose ZC_INV_ITEM_RO   as InvoiceItem;
+  expose ZC_VENDOR_RO     as Vendor;
+}

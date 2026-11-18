@@ -1,0 +1,157 @@
+@Metadata.layer: #CORE
+
+annotate entity ZC_INV_ITEM_RO with
+{
+    /* =========================================================
+       ITEM ID
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 10,
+            label: 'Item ID'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 10,
+            label: 'Item ID'
+        }
+    ]
+    ItemId;
+
+
+    /* =========================================================
+       DESCRIPTION
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 20,
+            label: 'Description'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 20,
+            label: 'Description'
+        }
+    ]
+    Description;
+
+
+    /* =========================================================
+       QUANTITY
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 30,
+            label: 'Quantity'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 30,
+            label: 'Quantity'
+        }
+    ]
+    Quantity;
+
+
+    /* =========================================================
+       CURRENCY
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 40,
+            label: 'Currency'
+        }
+    ]
+    Currency;
+
+
+    /* =========================================================
+       UNIT PRICE
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 50,
+            label: 'Unit Price'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 50,
+            label: 'Unit Price'
+        }
+    ]
+    UnitPrice;
+
+
+    /* =========================================================
+       NET VALUE
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 60,
+            label: 'Net Value'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 60,
+            label: 'Net Value'
+        }
+    ]
+    NetValue;
+
+
+    /* =========================================================
+       TAX RATE
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 70,
+            label: 'Tax Rate'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 70,
+            label: 'Tax Rate'
+        }
+    ]
+    TaxRate;
+
+
+    /* =========================================================
+       TAX VALUE
+       ========================================================= */
+
+    @UI.lineItem: [
+        {
+            position: 80,
+            label: 'Tax Value'
+        }
+    ]
+
+    @UI.identification: [
+        {
+            position: 80,
+            label: 'Tax Value'
+        }
+    ]
+    TaxValue;
+
+}

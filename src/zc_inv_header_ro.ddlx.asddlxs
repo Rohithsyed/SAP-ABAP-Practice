@@ -1,0 +1,303 @@
+@Metadata.layer: #CORE
+
+annotate view ZC_INV_HEADER_RO with
+{
+  /* =========================================================
+     FACETS
+     ========================================================= */
+
+  @UI.facet: [
+    {
+      id: 'InvoiceDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Invoice Details',
+      position: 10
+    },
+    {
+      id: 'InvoiceItems',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Invoice Items',
+      position: 20,
+      targetElement: '_Item'
+    }
+  ]
+
+
+  /* =========================================================
+     INVOICE ID
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 10,
+      label: 'Invoice ID'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 10,
+      label: 'Invoice ID'
+    }
+  ]
+
+  InvoiceId;
+
+
+  /* =========================================================
+     VENDOR
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 20,
+      label: 'Vendor'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 20,
+      label: 'Vendor'
+    }
+  ]
+
+  VendorId;
+
+
+  /* =========================================================
+     INVOICE NUMBER
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 30,
+      label: 'Invoice Number'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 30,
+      label: 'Invoice Number'
+    }
+  ]
+
+  InvoiceNumber;
+
+
+  /* =========================================================
+     INVOICE DATE
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 40,
+      label: 'Invoice Date'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 40,
+      label: 'Invoice Date'
+    }
+  ]
+
+  InvoiceDate;
+
+
+  /* =========================================================
+     DUE DATE
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 50,
+      label: 'Due Date'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 50,
+      label: 'Due Date'
+    }
+  ]
+
+  DueDate;
+
+
+  /* =========================================================
+     CURRENCY
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 60,
+      label: 'Currency'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 60,
+      label: 'Currency'
+    }
+  ]
+
+  Currency;
+
+
+  /* =========================================================
+     NET AMOUNT
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 70,
+      label: 'Net Amount'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 70,
+      label: 'Net Amount'
+    }
+  ]
+
+  NetAmount;
+
+
+  /* =========================================================
+     TAX AMOUNT
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 80,
+      label: 'Tax Amount'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 80,
+      label: 'Tax Amount'
+    }
+  ]
+
+  TaxAmount;
+
+
+  /* =========================================================
+     TOTAL AMOUNT
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 90,
+      label: 'Total Amount'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 90,
+      label: 'Total Amount'
+    }
+  ]
+
+  TotalAmount;
+
+
+  /* =========================================================
+     STATUS + ACTIONS
+     ========================================================= */
+
+  @UI.lineItem: [
+    {
+      position: 100,
+      label: 'Status'
+    }
+  ]
+
+  @UI.identification: [
+    {
+      position: 100,
+      label: 'Status'
+    },
+    {
+      type: #FOR_ACTION,
+      dataAction: 'Submit',
+      label: 'Submit',
+      position: 110
+    },
+    {
+      type: #FOR_ACTION,
+      dataAction: 'Approve',
+      label: 'Approve',
+      position: 120
+    },
+    {
+      type: #FOR_ACTION,
+      dataAction: 'Reject',
+      label: 'Reject',
+      position: 130
+    },
+    {
+      type: #FOR_ACTION,
+      dataAction: 'MarkAsPaid',
+      label: 'Mark as Paid',
+      position: 140
+    }
+  ]
+
+  Status;
+
+
+  /* =========================================================
+     CREATED BY
+     ========================================================= */
+
+  @UI.identification: [
+    {
+      position: 150,
+      label: 'Created By'
+    }
+  ]
+
+  CreatedBy;
+
+
+  /* =========================================================
+     CREATED AT
+     ========================================================= */
+
+  @UI.identification: [
+    {
+      position: 160,
+      label: 'Created At'
+    }
+  ]
+
+  CreatedAt;
+
+
+  /* =========================================================
+     LAST CHANGED AT
+     ========================================================= */
+
+  @UI.identification: [
+    {
+      position: 170,
+      label: 'Last Changed At'
+    }
+  ]
+
+  LastChangedAt;
+
+}

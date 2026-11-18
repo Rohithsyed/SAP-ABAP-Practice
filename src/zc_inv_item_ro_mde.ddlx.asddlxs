@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+
+annotate view ZC_INV_ITEM_RO with
+{
+  @UI.facet: [
+    {
+      id: 'ItemDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Item Details',
+      position: 10
+    }
+  ]
+
+  @UI: {
+    lineItem: [
+      { position: 10, label: 'Item ID' }
+    ],
+    identification: [
+      { position: 10, label: 'Item ID' }
+    ]
+  }
+  ItemId;
+
+  @UI: {
+    lineItem: [
+      { position: 20, label: 'Description' }
+    ],
+    identification: [
+      { position: 20, label: 'Description' }
+    ]
+  }
+  Description;
+
+  @UI: {
+    lineItem: [
+      { position: 30, label: 'Quantity' }
+    ],
+    identification: [
+      { position: 30, label: 'Quantity' }
+    ]
+  }
+  Quantity;
+
+  @UI: {
+    lineItem: [
+      { position: 40, label: 'Currency' }
+    ],
+    identification: [
+      { position: 40, label: 'Currency' }
+    ]
+  }
+  Currency;
+
+  @UI: {
+    lineItem: [
+      { position: 50, label: 'Unit Price' }
+    ],
+    identification: [
+      { position: 50, label: 'Unit Price' }
+    ]
+  }
+  UnitPrice;
+
+  @UI: {
+    lineItem: [
+      { position: 60, label: 'Net Value' }
+    ],
+    identification: [
+      { position: 60, label: 'Net Value' }
+    ]
+  }
+  NetValue;
+
+  @UI: {
+    lineItem: [
+      { position: 70, label: 'Tax Rate' }
+    ],
+    identification: [
+      { position: 70, label: 'Tax Rate' }
+    ]
+  }
+  TaxRate;
+
+  @UI: {
+    lineItem: [
+      { position: 80, label: 'Tax Value' }
+    ],
+    identification: [
+      { position: 80, label: 'Tax Value' }
+    ]
+  }
+  TaxValue;
+}

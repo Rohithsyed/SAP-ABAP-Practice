@@ -1,0 +1,31 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_INV_HEADER_RO alias Invoice
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Submit;
+  use action Approve;
+  use action Reject;
+  use action MarkAsPaid;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Item { create; with draft; }
+}
+
+define behavior for ZC_INV_ITEM_RO alias Item
+{
+  use update;
+  use delete;
+
+  use association _Header { with draft; }
+}

@@ -1,0 +1,86 @@
+managed implementation in class zbp_i_inv_header_ro unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_INV_HEADER_RO alias Invoice
+persistent table zinv_header
+draft table zinv_header_d
+lock master total etag LastChangedAt
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  association _Item { create; with draft; }
+
+
+  field ( readonly ) CreatedBy;
+  field ( readonly ) CreatedAt;
+  field ( readonly ) LastChangedAt;
+
+  determination SetInvoiceId on modify
+  { create; }
+
+  action Submit result [1] $self;
+  action Approve result [1] $self;
+  action Reject result [1] $self;
+  action MarkAsPaid result [1] $self;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft determine action Prepare;
+  draft action Resume;
+
+
+  mapping for zinv_header
+  {
+    InvoiceId     = invoice_id;
+    VendorId      = vendor_id;
+    InvoiceNumber = invoice_number;
+    InvoiceDate   = invoice_date;
+    DueDate       = due_date;
+    Currency      = cuky_field;
+    NetAmount     = net_amount;
+    TaxAmount     = tax_amount;
+    TotalAmount   = total_amount;
+    Status        = status;
+    CreatedBy     = created_by;
+    CreatedAt     = created_at;
+    LastChangedAt = last_changed_at;
+  }
+}
+
+
+define behavior for ZI_INV_ITEM_RO alias Item
+persistent table zinv_item
+draft table zinv_item_d
+lock dependent by _Header
+authorization dependent by _Header
+{
+  update;
+  delete;
+
+  association _Header;
+
+  field ( readonly ) InvoiceId;
+  field ( readonly ) NetValue;
+  field ( readonly ) TaxValue;
+
+  determination CalculateValues on modify
+    { field Quantity, UnitPrice, TaxRate; }
+
+  mapping for zinv_item
+  {
+    InvoiceId   = invoice_id;
+    ItemId      = item_id;
+    Description = description;
+    Quantity    = quantity;
+    Currency    = cuky_field;
+    UnitPrice   = unit_price;
+    NetValue    = net_value;
+    TaxRate     = tax_rate;
+    TaxValue    = tax_value;
+  }
+}
